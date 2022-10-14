@@ -62,20 +62,20 @@ SELECT
 FROM
 	DataCleaning..NashvilleHousing;
 
--- SEARCH UNTIL THE CHARINDEX VALUE!!!
+-- SEARCHED UNTIL THE CHARINDEX VALUE!!!
 SELECT
 	SUBSTRING(PropertyAddress,1,CHARINDEX(',',PropertyAddress)) as Adress
 FROM
 	DataCleaning..NashvilleHousing;
 
---TO GET RID OF SEARCHED VALUE -1 CAN BE INSERTED!!! 
+--TO GET RID OF SEARCHED VALUE "-1" CAN BE INSERTED!!! 
 
 SELECT
 	SUBSTRING(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1) as Adress
 FROM
 	DataCleaning..NashvilleHousing;
 
---BY USING THIS QUERY VALUES ARE SEPERATED AS EXPECTED
+--BY USING THIS QUERY, VALUES ARE SEPERATED AS EXPECTED
 SELECT
 	SUBSTRING(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1),
 	SUBSTRING(PropertyAddress,CHARINDEX(',',PropertyAddress)+1, LEN(PropertyAddress)) as Adress
@@ -184,6 +184,7 @@ SELECT
 FROM
 	DataCleaning..NashvilleHousing
 )
+
 --DELETING THE DUPLICATES
 DELETE
 	
